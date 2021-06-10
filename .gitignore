@@ -1,0 +1,13 @@
+python-playfield-frontend/**/*
+python-playfield-frontend
+Include/**/*
+Include
+Lib/**/*
+Lib
+Scripts/**/**
+Scripts
+pyenv.cfg
+.vscode/**/*
+.vscode
+/**/__pycache__/**/*
+/**/__pycache__

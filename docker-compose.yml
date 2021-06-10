@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+
+    python-vue-playfield-backend:
+        build: .
+        image: yogavidya/python-vue-playfield-backend
+        container_name: 
+            python-vue-playfield-backend
+        logging:
+            driver: local
+        networks:
+            - application
+        ports:
+            - "5000:5000"
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+
+    python-vue-playfield-frontend:
+        build: ./python-playfield-frontend
+        image: yogavidya/python-vue-playfield-frontend
+        container_name: 
+            python-vue-playfield-frontend
+        logging:
+            driver: local
+        networks:
+            - application
+        ports:
+            - "8091:8091"
+        links:
+            - python-vue-playfield-backend
+        depends_on: 
+            - python-vue-playfield-backend
+
+networks:
+    application:
+
+
